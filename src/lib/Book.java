@@ -4,15 +4,24 @@ public class Book {
 	
 	protected String author;
 	protected String title;
-	int isbn;
+	protected String isbn;
 	
+	/**
+	 * Default constructor for book
+	 */
 	Book () {
 		author = "";
 		title = "";
-		isbn =0;
+		isbn = "";
 	}
 	
-	Book (String author, String title,int isbn ) {
+	/**
+	 * Constructor for book with all input fields 
+	 * @param author: author of book
+	 * @param title: title of book
+	 * @param isbn: isbn for book
+	 */
+	Book (String author, String title,String isbn ) {
 		this.author = author;
 		this.title = title;
 		this.isbn = isbn;
@@ -29,7 +38,7 @@ public class Book {
 		return this.title;
 	}
 	
-	public int getIsbn() {
+	public String getIsbn() {
 		return this.isbn;
 	}
 	
@@ -44,12 +53,16 @@ public class Book {
 		this.title = title;
 	}
 	
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 	
+	/**
+	 * Converts book to printable string
+	 * @return "The author of [title] is [author]\n ISBN: [isbn]
+	 */
 	public String toString() {
-		return "The author of " + this.title + " is " + this.author + "\nISBN: "
+		return "Title: " + this.title + "\nAuthor:" + this.author + "\nISBN: "
 				+ this.isbn;
 	}
 	
@@ -57,7 +70,7 @@ public class Book {
 		Book b = new Book ();
 		b.setAuthor("Name");
 		b.setTitle("Title");
-		b.setIsbn (726472);
+		b.setIsbn ("726472");
 		System.out.println(b);
 	}
 
